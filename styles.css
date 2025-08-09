@@ -1,0 +1,36 @@
+/* styles.css */
+:root{ --bg:#f8f6f1; --card:#fff; --accent:#d39a2b; --muted:#666 }
+*{box-sizing:border-box;font-family:Arial, 'Segoe UI', Tahoma}
+body{background:var(--bg);margin:0;padding:20px;color:#222}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+header h1{margin:0;font-size:20px}
+.container{max-width:1100px;margin:0 auto}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.form-section,.table-section{margin-bottom:18px}
+.form-section form{display:block;background:var(--card);padding:12px;border-radius:8px}
+.row{display:flex;gap:12px}
+label{display:block;flex:1}
+input,select,textarea{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+textarea{min-height:72px}
+.actions{margin-top:10px;display:flex;gap:8px}
+button{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+button.ghost{background:transparent;color:var(--muted);border:1px solid #ddd}
+button.danger{background:#d9534f}
+.table-controls{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden}
+th,td{padding:8px;border-bottom:1px solid #f0f0f0;text-align:center}
+tr:last-child td{border-bottom:none}
+.actions-cell button{margin:0 4px;padding:6px 8px}
+.small{font-size:12px;color:var(--muted)}
+.error{color:#d9534f}
+
+/* login overlay */
+.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45)}
+.loginBox{background:#fff;padding:20px;border-radius:10px;min-width:320px;text-align:center}
+.loginBox input{width:100%;margin-top:12px}
+.loginBox button{margin-top:12px;width:100%}
+
+@media (max-width:700px){
+  .row{flex-direction:column}
+  header h1{font-size:18px}
+}

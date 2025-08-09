@@ -1,0 +1,113 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>سلطان العسل - لوحة الطلبات</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- شاشة كلمة السر -->
+  <div id="loginOverlay" class="overlay">
+    <div class="loginBox">
+      <h2>أدخل كلمة السر</h2>
+      <input id="passwordInput" type="password" placeholder="كلمة السر" autocomplete="off" />
+      <button id="loginBtn">دخول</button>
+      <p class="small">كلمة السر مخفية — أدخل كلمة السر لكي تتمكن من الدخول.</p>
+      <p id="loginError" class="error"></p>
+    </div>
+  </div>
+
+  <div class="container" id="app" style="display:none">
+    <header>
+      <h1>سلطان العسل — لوحة إدارة الطلبات</h1>
+      <div class="header-right">
+        <button id="logoutBtn" class="ghost">خروج</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2>بيانات الطلب</h2>
+        <form id="orderForm">
+          <div class="row">
+            <label>رقم الطلب
+              <input id="orderNumber" required type="text" placeholder="مثال: 12345" />
+            </label>
+            <label>اسم العميل
+              <input id="clientName" required type="text" placeholder="اسم العميل" />
+            </label>
+          </div>
+
+          <div class="row">
+            <label>رقم الجوال
+              <input id="clientPhone" required type="tel" placeholder="05XXXXXXXX" />
+            </label>
+            <label>حالة الدفع
+              <select id="paymentStatus">
+                <option value="مدفوع">مدفوع</option>
+                <option value="دفع عند الاستلام">دفع عند الاستلام</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row">
+            <label>حالة الإرسال
+              <select id="sentStatus">
+                <option value="لم يتم الإرسال">لم يتم الإرسال</option>
+                <option value="تم الإرسال">تم الإرسال</option>
+              </select>
+            </label>
+
+            <label>حالة الاستلام
+              <select id="receivedStatus">
+                <option value="لم يستلم">لم يستلم</option>
+                <option value="استلم">استلم</option>
+              </select>
+            </label>
+          </div>
+
+          <label>ملاحظات
+            <textarea id="notes" placeholder="ملاحظات على الطلب (اختياري)"></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="submit" id="saveBtn">حفظ الطلب</button>
+            <button type="button" id="resetBtn" class="ghost">مسح الحقول</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="table-section">
+        <h2>قائمة الطلبات</h2>
+        <div class="table-controls">
+          <input id="searchInput" placeholder="بحث برقم الطلب أو اسم العميل" />
+          <button id="clearAll" class="danger">حذف الكل</button>
+        </div>
+        <table id="ordersTable">
+          <thead>
+            <tr>
+              <th>رقم الطلب</th>
+              <th>العميل</th>
+              <th>جوال</th>
+              <th>الدفع</th>
+              <th>الإرسال</th>
+              <th>الاستلام</th>
+              <th>ملاحظات</th>
+              <th>إجراءات</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <small>محفوظ محلياً في متصفحك. لحماية الدخول استخدم كلمة السر.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
